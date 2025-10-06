@@ -1,20 +1,20 @@
 import Jumbo from 'super-rentals/components/jumbo';
 import RentalImage from 'super-rentals/components/rental/image';
 import Map from 'super-rentals/components/map';
+import ShareButton from 'super-rentals/components/share-button';
 
 <template>
   <Jumbo>
     <h2>{{@rental.title}}</h2>
     <p>Nice find! This looks like a nice place to stay near
       {{@rental.city}}.</p>
-    <a
-      href="#"
-      target="_blank"
-      rel="external nofollow noopener noreferrer"
-      class="share button"
+    <ShareButton
+      @text="Check out {{@rental.title}} on Kimo Super Rentals!"
+      @hashtags="vacation,travel,authentic,blessed,superrentals"
+      @via="kimo-emberjs"
     >
       Share on Twitter
-    </a>
+    </ShareButton>
   </Jumbo>
 
   <article class="rental detailed">
