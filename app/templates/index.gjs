@@ -16,5 +16,4 @@ import Rental from 'super-rentals/components/rental';
       {{/each}}
     </ul>
   </div>
-  
 </template>

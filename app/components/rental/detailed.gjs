@@ -1,17 +1,28 @@
+import Jumbo from 'super-rentals/components/jumbo';
 import RentalImage from 'super-rentals/components/rental/image';
 import Map from 'super-rentals/components/map';
-import { LinkTo } from '@ember/routing';
 
 <template>
-  {{yield}}
-  <article class="rental">
+  <Jumbo>
+    <h2>{{@rental.title}}</h2>
+    <p>Nice find! This looks like a nice place to stay near
+      {{@rental.city}}.</p>
+    <a
+      href="#"
+      target="_blank"
+      rel="external nofollow noopener noreferrer"
+      class="share button"
+    >
+      Share on Twitter
+    </a>
+  </Jumbo>
+
+  <article class="rental detailed">
     <RentalImage src={{@rental.image}} alt="A picture of {{@rental.title}}" />
+
     <div class="details">
-      <h3>
-        <LinkTo @route="rental" @model={{@rental}}>
-          {{@rental.title}}
-        </LinkTo>
-      </h3>
+      <h3>About {{@rental.title}}</h3>
+
       <div class="detail owner">
         <span>Owner:</span>
         {{@rental.owner}}
@@ -19,6 +30,8 @@ import { LinkTo } from '@ember/routing';
       <div class="detail type">
         <span>Type:</span>
         {{@rental.type}}
+        –
+        {{@rental.category}}
       </div>
       <div class="detail location">
         <span>Location:</span>
@@ -28,14 +41,19 @@ import { LinkTo } from '@ember/routing';
         <span>Number of bedrooms:</span>
         {{@rental.bedrooms}}
       </div>
+      <div class="detail description">
+        <p>{{@rental.description}}</p>
+      </div>
     </div>
+
     <Map
       @lat={{@rental.location.lat}}
       @lng={{@rental.location.lng}}
-      @zoom="9"
-      @width="150"
-      @height="150"
+      @zoom="12"
+      @width="894"
+      @height="600"
       alt="A map of {{@rental.title}}"
+      class="large"
     />
   </article>
 </template>
