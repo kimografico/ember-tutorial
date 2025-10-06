@@ -1,6 +1,5 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'super-rentals/tests/helpers';
-import { render } from '@ember/test-helpers';
 import { render, click } from '@ember/test-helpers';
 import RentalImage from 'super-rentals/components/rental/image';
 
