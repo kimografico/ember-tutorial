@@ -2,7 +2,6 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'super-rentals/tests/helpers';
 import { render, fillIn } from '@ember/test-helpers';
 import { tracked } from '@glimmer/tracking';
-import RentalsFilter from 'super-rentals/components/rentals-filter';
 import Rentals from 'super-rentals/components/rentals';
 
 class State {
