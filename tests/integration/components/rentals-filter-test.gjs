@@ -1,11 +1,12 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'super-rentals/tests/helpers';
 import { render, fillIn } from '@ember/test-helpers';
-import { render } from '@ember/test-helpers';
+import { tracked } from '@glimmer/tracking';
 import RentalsFilter from 'super-rentals/components/rentals-filter';
+import Rentals from 'super-rentals/components/rentals';
 
 class State {
-  @tracked rentals = {};
+  @tracked rentals = [];
 }
 
 const state = new State();
@@ -70,7 +71,6 @@ module('Integration | Component | rentals', function (hooks) {
   });
 
   test('it renders all given rental properties by default', async function (assert) {
-
     await render(<template><Rentals @rentals={{state.rentals}} /></template>);
 
     assert.dom('.rentals').exists();
