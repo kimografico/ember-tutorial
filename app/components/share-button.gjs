@@ -3,7 +3,6 @@ import { service } from '@ember/service';
 const TWEET_INTENT = 'https://twitter.com/intent/tweet';
 
 export default class ShareButton extends Component {
-  
   @service router;
 
   get currentURL() {
